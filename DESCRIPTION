@@ -9,3 +9,9 @@ Encoding: UTF-8
 LazyData: true
 URL: https://github.com/tux2000/comprate
 BugReports: https://github.com/tux2000/comprate/issues
+RoxygenNote: 7.2.3
+Imports: 
+    httr,
+    magrittr,
+    stringi,
+    stringr
