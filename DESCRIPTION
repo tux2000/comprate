@@ -1,12 +1,10 @@
 Package: comprate
 Type: Package
-Title: What the Package Does (Title Case)
+Title: R package to calculate jämförelseränta for bolån 
 Version: 0.1.0
-Author: Who wrote it
-Maintainer: The package maintainer <yourself@somewhere.net>
-Description: More about what it does (maybe more than one line)
-    Use four spaces when indenting paragraphs within the Description.
-License: What license is it under?
+Author: Tux2000
+Maintainer: tux2k@web.de
+License: GPL-3
 Encoding: UTF-8
 LazyData: true
 URL: https://github.com/tux2000/comprate
