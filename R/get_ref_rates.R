@@ -8,8 +8,9 @@
 #'
 #' @importFrom httr2 request req_perform resp_body_string
 #' @importFrom dplyr mutate across
+#' @importFrom memoise memoise
 
-get_ref_rates <- function(trade_date = yesterday()) {
+get_ref_rates <- memoise(function(trade_date = yesterday()) {
   string <-
   request(glue::glue("https://konsumenternassixdatarse-2019-1-0-standard.capitex.vitec.net/j/FetchSecurities?datum={trade_date}&version=V2&callback=data")) %>%
     req_perform() %>%
@@ -30,4 +31,4 @@ get_ref_rates <- function(trade_date = yesterday()) {
     mutate(across(.cols = c(Fixingrta),
                   .fns = as.numeric))
 
-}
+})
