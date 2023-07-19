@@ -5,6 +5,9 @@
 #' @return tuyi
 #' @export
 #'
+#' @examples
+#' get_ref_rates()
+#'
 #'
 #' @importFrom httr2 request req_perform resp_body_string
 #' @importFrom dplyr mutate across
@@ -25,7 +28,8 @@ get_ref_rates <- memoise(function(trade_date = yesterday()) {
     tidyr::unnest_wider(DocumentElement) %>%
     tidyr::unnest(cols = c(Date, ISINCODE, Instype, Maturity, Fixingrta)) %>%
     tidyr::unnest(cols = c(Date, ISINCODE, Instype, Maturity, Fixingrta)) %>%
-    mutate(across(.fns = stringr::str_trim)) %>%
+    mutate(across(.cols = tidyselect::everything(),
+                  .fns = stringr::str_trim)) %>%
     mutate(across(.cols = c(Date, Maturity),
                   .fns = as.Date)) %>%
     mutate(across(.cols = c(Fixingrta),
