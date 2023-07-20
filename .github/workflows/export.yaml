@@ -10,7 +10,7 @@ jobs:
   export:
     runs-on: ${{ matrix.config.os }}
 
-   strategy:
+    strategy:
       fail-fast: true
       matrix:
         config:
