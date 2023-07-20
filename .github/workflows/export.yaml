@@ -8,6 +8,8 @@ name: Export
 
 jobs:
   export:
+    permissions:
+      contents: write
     runs-on: ${{ matrix.config.os }}
 
     strategy:
