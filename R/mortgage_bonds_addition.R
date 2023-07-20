@@ -1,4 +1,4 @@
-mortgage_bonds_addition <- function(date, ...) {
+mortgage_bonds_addition <- memoise(function(date, ...) {
   date <- as.Date(date)
 
   ref_rates <- get_ref_rates(...)
@@ -12,4 +12,4 @@ mortgage_bonds_addition <- function(date, ...) {
 
   stats::predict(model, data.frame(Maturity = date))
 
-}
+})

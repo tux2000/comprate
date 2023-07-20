@@ -15,3 +15,8 @@ tuyi
 \description{
 Get reference rates from konsumenternas
 }
+\examples{
+get_ref_rates()
+
+
+}

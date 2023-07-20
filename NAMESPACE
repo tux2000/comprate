@@ -2,6 +2,7 @@
 
 export("%>%")
 export(calculate_comp_rate)
+export(export_json)
 export(get_ref_rates)
 export(gov_bond_level)
 importFrom(dplyr,across)
