@@ -37,7 +37,7 @@ jobs:
 
       - name: Export json
         run: |
-          comprate::export_json(c(30, 365, 2*365), "data.json")
+          comprate::export_json(c(90, 365, 2*365), "data.json")
         shell: Rscript {0}
 
       - name: Commit and Push export
