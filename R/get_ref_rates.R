@@ -15,7 +15,7 @@
 
 get_ref_rates <- memoise(function(trade_date = yesterday()) {
   string <-
-  request(glue::glue("https://konsumenternassixdatarse-24-1-0-standard-prod.capitex.vitec.net/j/FetchSecurities?datum={trade_date}&version=V2&callback=data")) %>%
+  request(glue::glue("https://konsumenternassixdatarse-25-1-0-standard-prod.capitex.vitec.net/j/FetchSecurities?datum={trade_date}&version=V2&callback=data")) %>%
     req_perform() %>%
     resp_body_string() %>%
     stringi::stri_unescape_unicode() %>%
