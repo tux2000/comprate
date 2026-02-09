@@ -14,7 +14,8 @@
 gov_bond_level <- Vectorize(function(date, ...) {
   date <- as.Date(date)
 
-  ref_rates <- get_ref_rates(...)
+  ref_rates <- get_ref_rates(...) %>%
+    dplyr::filter(Fixingrta < 100)
 
   after <- ref_rates %>%
     dplyr::filter(Instype != "BO") %>%

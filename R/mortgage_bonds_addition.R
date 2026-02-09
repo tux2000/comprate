@@ -1,7 +1,8 @@
 mortgage_bonds_addition <- memoise(function(date, ...) {
   date <- as.Date(date)
 
-  ref_rates <- get_ref_rates(...)
+  ref_rates <- get_ref_rates(...) %>%
+    dplyr::filter(Fixingrta < 100)
 
   df_diff <- ref_rates %>%
     filter(.data[["Instype"]] == "BO") %>%
